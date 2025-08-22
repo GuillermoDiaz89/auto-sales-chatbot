@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.dist/
+build/
+dist/
+*.log
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter/IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data / models (adjust as needed)
+data/
+*.bin
+*.pt
+*.onnx
+*.ckpt
+
+# Environment files
+.env
+.env.*
+!.env.example   # keep the example file tracked
+
+# Others
+*.dll
+*.lib
