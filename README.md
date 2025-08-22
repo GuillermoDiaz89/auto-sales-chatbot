@@ -188,10 +188,4 @@ Guillermo Díaz
 LinkedIn · GitHub
 
 
----
-
-Esto te deja un README **profesional, limpio y con todas las piezas que un reviewer espera**: intro, instalación, demo, ejemplos, roadmap y autoría.  
-
-¿Quieres que además te prepare un **`.env.example` listo** para incluir en tu repo y que haga match directo con este README?
-
 
