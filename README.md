@@ -187,9 +187,9 @@ Ejecutar la suite de tests:
 
 
 pytest -v
-👨‍💻 Autor
-Guillermo Díaz
-LinkedIn · GitHub
+👨‍💻 Autor 
+[Guillermo Díaz](https://www.linkedin.com/in/gdiaza) · [GitHub](https://github.com/GuillermoDiaz89)
+
 
 
 
