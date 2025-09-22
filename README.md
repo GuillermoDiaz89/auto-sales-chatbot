@@ -1,14 +1,18 @@
-# 📖 Kavak AI Agent
+# 📖 Virtual Car Sales Agent (Demo)
+
+⚠️ **Nota**: Este proyecto fue desarrollado como prueba técnica personal y de aprendizaje.  
+> No está afiliado a Kavak ni contiene información sensible de la empresa.  
+> Todo el contenido es simulado y se usa únicamente con fines demostrativos y de portafolio.
 
 ## 📝 Descripción
 
-Este proyecto implementa un **asistente virtual (chatbot)** que simula a un agente comercial de **Kavak**, con las siguientes capacidades:
+Este proyecto implementa un **asistente virtual (chatbot)** que simula a un agente comercial, con las siguientes capacidades:
 
 - Responder preguntas frecuentes sobre **políticas, garantías, seguros y propuesta de valor**.  
 - Recomendar autos del catálogo (CSV provisto).  
 - Ofrecer planes de financiamiento con una tasa del **10% anual** a plazos de **3–6 años**.  
 - Conectarse con **WhatsApp mediante Twilio Sandbox** para una experiencia conversacional real.  
-- Utilizar un enfoque de **Retrieval-Augmented Generation (RAG)** para minimizar alucinaciones y responder con información de la base de conocimiento (PDF de Kavak).  
+- Utilizar un enfoque de **Retrieval-Augmented Generation (RAG)** para minimizar alucinaciones y responder con información de la base de conocimiento (PDF con el stock de vehículos).  
 
 ---
 
@@ -28,7 +32,7 @@ Este proyecto implementa un **asistente virtual (chatbot)** que simula a un agen
 ## ⚙️ Flujo de Funcionamiento
 
 1. **Indexación de la KB**
-   - Convierte el PDF de Kavak en texto.
+   - Convierte el PDF del stock de vehículos en venta en texto.
    - Genera embeddings con `all-MiniLM-L6-v2`.
    - Crea un índice FAISS (`kb.index`) y guarda metadatos (`kb_meta.json`).
 
@@ -41,7 +45,7 @@ Este proyecto implementa un **asistente virtual (chatbot)** que simula a un agen
    - Envía el prompt al modelo `gpt-4o-mini`.
    - Si hay contexto → responde citando fragmentos.  
    - Si no hay contexto → responde con fallback:  
-     *“Lo siento, no tengo información disponible sobre ese tema. ¿Quieres que te ponga en contacto con un agente de Kavak?”*
+     *“Lo siento, no tengo información disponible sobre ese tema. ¿Quieres que te ponga en contacto con un agente de ventas?”*
 
 4. **Integración con WhatsApp**
    - FastAPI expone `/whatsapp/webhook`.
@@ -80,7 +84,7 @@ Clonar repo y crear entorno virtual
 
 
 git clone https://github.com/<tu-repo>.git
-cd kavak-agent
+cd virtual-car-sales-agent
 python -m venv .venv
 .venv\Scripts\activate   # Windows
 source .venv/bin/activate   # Linux/Mac
@@ -135,14 +139,14 @@ Usuario:
 ¿Cuál es la política de garantía?
 
 Bot:
-La política de garantía de Kavak es de 7 días o 300 km, lo que ocurra primero.
+La política de garantía es de 7 días o 300 km, lo que ocurra primero.
 
 🛡️ Preguntar por seguros
 Usuario:
-¿Qué incluye el seguro de Kavak?
+¿Qué incluye el seguro de satisfacción?
 
 Bot:
-El seguro de Kavak incluye cobertura básica de daños, robo total y responsabilidad civil.
+El seguro de satisfacción incluye cobertura básica de daños, robo total y responsabilidad civil.
 
 🚗 Recomendación de autos
 Usuario:
